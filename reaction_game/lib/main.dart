@@ -1,58 +1,24 @@
 import 'package:flutter/material.dart';
 
-void main() => runApp(ReactionGP());
+void main() => runApp(MyApp());
 
-class ReactionGP extends StatelessWidget {
+class MyApp extends StatelessWidget {
   @override
-    Widget build(BuildContext context) {
+  Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Welcome to Flutter',
       home: Scaffold(
-        appBar: AppBar(
-          title: Text('Welcome to Flutter'),
-        ),
-        body: Center(
-          child: Text('Hello World'),
+        body: new Container(
+          decoration: new BoxDecoration(
+            gradient: new LinearGradient(colors: [const Color.fromRGBO(112, 200, 208, 1), const Color.fromRGBO(255, 255, 255, 1)],
+            begin: FractionalOffset.topCenter,
+            end:FractionalOffset.bottomCenter,
+            stops: [0.0,1.0],
+            tileMode: TileMode.clamp
+          ),
         ),
       ),
-    );
+    ),
+  );
   }
-
-  Widget titleSection = Container(
-  padding: const EdgeInsets.all(32),
-  child: Row(
-    children: [
-      Expanded(
-        /*1*/
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            /*2*/
-            Container(
-              padding: const EdgeInsets.only(bottom: 8),
-              child: Text(
-                'Oeschinen Lake Campground',
-                style: TextStyle(
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
-            ),
-            Text(
-              'Kandersteg, Switzerland',
-              style: TextStyle(
-                color: Colors.grey[500],
-              ),
-            ),
-          ],
-        ),
-      ),
-      /*3*/
-      Icon(
-        Icons.star,
-        color: Colors.red[500],
-      ),
-      Text('41'),
-    ],
-  ),
-);
 }
